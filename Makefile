@@ -1,10 +1,14 @@
 CC = g++
 
 CFLAGS = -g -Wall
-OBJFILES = main.o
+BUILDDIR = build
+SRCDIR = src
+BINDIR = bin
+
+OBJFILES = $(BUILDDIR)/main.o
 
 run: $(OBJFILES)
-	$(CC) -o run $(OBJFILES)
+	$(CC) -o $(BINDIR)/run $(OBJFILES)
 
-main.o: main.cpp
-	$(CC) -c main.cpp
+main.o: $(SRCDIR)/main.cpp
+	$(CC) -c $(SRCDIR)/main.cpp -o $(BUILDDIR)/main.o
