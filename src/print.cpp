@@ -7,12 +7,12 @@ char dam_char = '%';
 char dry_char = '=';
 char des_char = ':';
 
-std::string GREEN = "\033[32m";
-std::string BLUE = "\033[34m";
-std::string BGREEN = "\033[42m";
-std::string YELLOW = "\033[33m";
-std::string BBLUE = "\033[44m";
-std::string BYELLOW = "\033[43m";
+char * GREEN = "\033[32m";
+char * BLUE = "\033[34m";
+char * BGREEN = "\033[42m";
+char * YELLOW = "\033[33m";
+char * BBLUE = "\033[44m";
+char * BYELLOW = "\033[43m";
 
 void print(World * w) {
   for(int y = 0; y < w.gridSize; ++y) {
@@ -26,19 +26,19 @@ void print(World * w) {
 std::string stringOf(WorldCoord w) {
   switch(w.hydration_value) {
     case WATER:
-        return BBLUE + BLUE + wat_char;
+        return (BBLUE + BLUE) + wat_char;
       break;
     case WET:
-        return BGREEN + BLUE + wet_char;
+        return (BGREEN + BLUE) + wet_char;
       break;
     case DAMP:
-        return BGREEN + GREEN + dam_char;
+        return (BGREEN + GREEN) + dam_char;
       break;
     case DRY:
-        return BGREEN + YELLOW + dam_char;
+        return (BGREEN + YELLOW) + dam_char;
       break;
     case DESERT:
-        return BYELLOW + YELLOW + des_char;
+        return (BYELLOW + YELLOW) + des_char;
       break;
   }
 }
