@@ -7,7 +7,7 @@ World::World( int seed ) {
 
   for ( int i = 0; i < worldSize(); ++i ) {
     for ( int j = 0; j < worldSize(); ++j ) {
-      _grid.add( new WorldCoord( i, j, 0.4f ) );
+      _grid->push_back( *(new WorldCoord( i, j, 0.4f )) );
     }
   }
 }
@@ -20,5 +20,5 @@ World::~World() {
 inline int World::worldSize() { return WORLD_SIZE; }
 
 const WorldCoord& World::getCoord( int x, int y ) {
-  return _grid[ ( y * WORLD_SIZE ) + x ];
+  return (*_grid)[ ( y * WORLD_SIZE ) + x ];
 }

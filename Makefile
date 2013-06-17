@@ -5,19 +5,19 @@ BUILDDIR = build
 SRCDIR = src
 BINDIR = bin
 
-OBJFILES = $(BUILDDIR)/main.o $(BUILDDIR)/World.o $(BUILDDIR)/WorldCoord.o $(BUILDDIR)/print.o
+OBJFILES = $(BUILDDIR)/World.o $(BUILDDIR)/WorldCoord.o $(BUILDDIR)/wprint.o
 
 run: $(OBJFILES)
-	$(CC) -o $(BINDIR)/run $(OBJFILES)
+	$(CC) -o $(BINDIR)/run $(OBJFILES) $(SRCDIR)/main.cpp
 
-$(BUILDDIR)/main.o: $(SRCDIR)/main.cpp
-	$(CC) -c $(SRCDIR)/main.cpp -o $(BUILDDIR)/main.o
+clean:
+	rm -Rf build/* bin/run
 
-$(BULDDIR)/World.o: $(SRCDIR)/World.cpp
-	$(CC) -c $(SRCDIR)/World.cpp -o $(BUILDDIR)/WorldCoord.o
+$(BUILDDIR)/World.o: $(SRCDIR)/World.cpp
+	$(CC) -c $(SRCDIR)/World.cpp -o $(BUILDDIR)/World.o
 
-$(BULDDIR)/WorldCoord.o: $(SRCDIR)/WorldCoord.cpp
+$(BUILDDIR)/WorldCoord.o: $(SRCDIR)/WorldCoord.cpp
 	$(CC) -c $(SRCDIR)/WorldCoord.cpp -o $(BUILDDIR)/WorldCoord.o
 
-$(BULDDIR)/print.o: $(SRCDIR)/print.cpp
-	$(CC) -c $(SRCDIR)/print.cpp -o $(BUILDDIR)/print.o
+$(BUILDDIR)/wprint.o: $(SRCDIR)/wprint.cpp
+	$(CC) -c $(SRCDIR)/wprint.cpp -o $(BUILDDIR)/wprint.o

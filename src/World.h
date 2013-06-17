@@ -11,14 +11,14 @@
 
 class World {
   public: 
-    World();
+    World( int seed );
     ~World();
 
     int worldSize();
     const WorldCoord& getCoord( int x, int y );
 
   private:
-    std::vector<WorldCoord> _grid;
-}
+    std::vector<WorldCoord> *_grid;
+};
 
 #endif

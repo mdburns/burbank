@@ -14,12 +14,12 @@ class WorldCoord {
     WorldCoord( int x, int y, float noise_value );
     virtual ~WorldCoord();
 
+    hydration hydration_level;
+
   private:
     // coordinates
     int _x;
     int _y;
-
-    hydration hydration_level;
-}
+};
 
 #endif
