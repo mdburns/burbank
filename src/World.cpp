@@ -5,8 +5,8 @@ World::World( int seed ) {
   // make the world
   _grid = new std::vector<WorldCoord>();
 
-  for ( int i = 0; i < worldSize(); ++i ) {
-    for ( int j = 0; j < worldSize(); ++j ) {
+  for ( int j = 0; j < worldSize(); ++j ) {
+    for ( int i = 0; i < worldSize(); ++i ) {
       _grid->push_back( *(new WorldCoord( i, j, 0.4f )) );
     }
   }
